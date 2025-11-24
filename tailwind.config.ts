@@ -68,6 +68,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				pixel: ['Press Start 2P', 'cursive'],
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -84,11 +87,46 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-neon': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.7',
+						transform: 'scale(1.05)'
+					}
+				},
+				'flash': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0'
+					}
+				},
+				'hit': {
+					'0%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'scale(1.2)',
+						opacity: '0.5'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-neon': 'pulse-neon 1s ease-in-out infinite',
+				'flash': 'flash 0.3s ease-in-out',
+				'hit': 'hit 0.4s ease-out'
 			}
 		}
 	},
